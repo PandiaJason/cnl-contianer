@@ -15,12 +15,23 @@ A self-contained Debian-based Docker environment for Computer Networks Lab (CNL)
 ⸻
 
 📁 Project Structure
-
+'''bash
+.
+admin@Jasons-MacBook-Pro cnl-contianer-main % tree
 .
 ├── Dockerfile
-├── README.md
-└── (any lab files you want to copy into container)
+├── analyse_packet.py
+├── arp_rarp.py
+├── capture_packet.py
+├── chat_client.py
+├── chat_server.py
+├── echo_client.py
+├── echo_server.py
+└── http_client.py
 
+1 directory, 9 files
+admin@Jasons-MacBook-Pro cnl-contianer-main % 
+'''
 
 
 ⸻
