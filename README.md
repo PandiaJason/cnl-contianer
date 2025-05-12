@@ -15,7 +15,8 @@ A self-contained Debian-based Docker environment for Computer Networks Lab (CNL)
 ⸻
 
 📁 Project Structure
-'''bash
+
+``` bash
 .
 admin@Jasons-MacBook-Pro cnl-contianer-main % tree
 .
@@ -31,7 +32,7 @@ admin@Jasons-MacBook-Pro cnl-contianer-main % tree
 
 1 directory, 9 files
 admin@Jasons-MacBook-Pro cnl-contianer-main % 
-'''
+```
 
 
 ⸻
