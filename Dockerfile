@@ -20,8 +20,11 @@ RUN useradd -m -s /bin/bash cnl-container \
     && echo 'cnl-container:cnl123$' | chpasswd \
     && usermod -aG sudo cnl-container
 
-# Set working directory
+# Set working directory inside container
 WORKDIR /home/cnl-container
+
+# Copy files from the current host directory into the container
+COPY . /home/cnl-container
 
 # Switch to the new user
 USER cnl-container
