@@ -28,6 +28,12 @@ From inside the cnl-container-main directory:
 docker build -t cnl-container-image .
 ```
 
+```
+docker build -t cnl-container-image .
+docker run -it --name cnl-lab -p 8080:8080 -p 12345:12345 cnl-container-image
+
+```
+
 
 ⸻
 
