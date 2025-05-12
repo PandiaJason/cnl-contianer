@@ -1,25 +1,12 @@
-
-🚀 CNL Lab Docker Container
-
-A self-contained Debian-based Docker environment for Computer Networks Lab (CNL) activities. Includes essential networking tools like ping, netstat, traceroute, tcpdump, ifconfig, etc.
+To build and install your Docker-based CNL lab environment from scratch, follow these complete steps:
 
 ⸻
 
-📦 Installed Tools
-	•	python3, pip
-	•	ping, net-tools, traceroute, iproute2
-	•	curl, netcat, nano
-	•	build-essential
-	•	sudo
+✅ 1. Project Folder Setup
 
-⸻
-
-📁 Project Structure
-
-``` bash
-.
-admin@Jasons-MacBook-Pro cnl-contianer-main % tree
-.
+Ensure you have this folder structure:
+```
+cnl-container-main/
 ├── Dockerfile
 ├── analyse_packet.py
 ├── arp_rarp.py
@@ -30,81 +17,61 @@ admin@Jasons-MacBook-Pro cnl-contianer-main % tree
 ├── echo_server.py
 └── http_client.py
 
-1 directory, 9 files
-admin@Jasons-MacBook-Pro cnl-contianer-main % 
+```
+
+⸻
+
+🐳 2. Build the Docker Image
+
+From inside the cnl-container-main directory:
+```
+docker build -t cnl-container-image .
 ```
 
 
 ⸻
 
-🛠️ Step-by-Step Setup
+🚀 3. Run the Container
 
-1. Clone the repository
-
-git clone https://github.com/yourusername/cnl-container.git
-cd cnl-container
-
-
-
-⸻
-
-2. Build the Docker Image
-
-docker build -t cnl-container-image .
-
-
-
-⸻
-
-3. Run the Container
-
+To run and expose the necessary ports (8080 and 12345):
+```
+docker run -it --name cnl-lab -p 8080:8080 -p 12345:12345 cnl-container-image
+```
+	⚠️ If the container name cnl-lab already exists and you want a new one:
+```
+docker rm cnl-lab      # Remove old one
 docker run -it --name cnl-lab -p 8080:8080 -p 12345:12345 cnl-container-image
 
-	This will:
-		•	Start the container named cnl-lab
-	•	Expose ports 8080 and 12345
-	•	Drop into a bash shell inside the container
+```
 
 ⸻
 
-4. Open Second Terminal into Same Container
+🔁 4. Access the Same Container in Two Terminals
 
-Keep container running (add tail -f /dev/null to Dockerfile if needed), then open another terminal:
-
+Terminal 1:
+```
+docker start -ai cnl-lab
+```
+Terminal 2:
+```
 docker exec -it cnl-lab bash
-
-	Now you have two terminals inside the same container!
-
-⸻
-
-5. Stop and Remove Container
-
-docker stop cnl-lab
-docker rm cnl-lab
-
+```
 
 
 ⸻
 
-🔁 Rebuilding & Running Again
+🧪 5. Try a Test Example (Echo Server & Client)
 
-If you make changes to code or Dockerfile:
+In Terminal 1 (server):
+```
+python3 echo_server.py
+```
+In Terminal 2 (client):
+```
+python3 echo_client.py
+```
 
-docker build -t cnl-container-image .
-docker run -it --name cnl-lab-v2 -p 8080:8080 -p 12345:12345 cnl-container-image
-
-(Use a different name like cnl-lab-v2 if the previous one still exists.)
 
 ⸻
 
-📝 Notes
-	•	To keep the container alive after closing terminal, consider using:
-
-docker run -dit --name cnl-lab -p 8080:8080 -p 12345:12345 cnl-container-image
-
-
-	•	Then enter anytime using:
-
-docker exec -it cnl-lab bash
-
-
+Would you like this bundled as a downloadable README.md file?
