@@ -1,0 +1,11 @@
+# Ignore all Python bytecode files
+*.pyc
+
+# Ignore the experiments directory
+experiments/
+
+# Ignore any files with a .log extension
+*.log
+
+# Ignore any temporary files created by editors
+*~
