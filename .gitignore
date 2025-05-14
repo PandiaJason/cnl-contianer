@@ -9,3 +9,5 @@ experiments/
 
 # Ignore any temporary files created by editors
 *~
+
+.DS_Store
