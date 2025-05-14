@@ -21,18 +21,10 @@ cnl-container-main/
 └── experiments
     ├── 01_network_tools
     ├── 02_http_client
-    │   └── http_client.py
     ├── 03_tcp_apps
-    │   ├── chat_client.py
-    │   ├── chat_server.py
-    │   ├── echo_client.py
-    │   └── echo_server.py
     ├── 04_dns_simulation
     ├── 05_packet_analysis
-    │   ├── analyse_packet.py
-    │   └── capture_packet.py
     ├── 06_arp_rarp_simulation
-    │   └── arp_rarp.py
     ├── 07_congestion_control_sim
     ├── 08_tcp_udp_performance
     ├── 09_routing_algorithms
@@ -48,29 +40,43 @@ cnl-container-main/
 Make sure your project folder has the following files and structure:
 
 ```
-cnl-container-main/
+.
 ├── Dockerfile
 ├── LICENSE
 ├── README.md
 └── experiments
     ├── 01_network_tools
+    │   └── 01README.md
     ├── 02_http_client
-    │   └── http_client.py
+    │   └── http_client.py
     ├── 03_tcp_apps
-    │   ├── chat_client.py
-    │   ├── chat_server.py
-    │   ├── echo_client.py
-    │   └── echo_server.py
+    │   ├── chat_client.py
+    │   ├── chat_server.py
+    │   ├── echo_client.py
+    │   └── echo_server.py
     ├── 04_dns_simulation
+    │   ├── dns_client.py
+    │   └── dns_server.py
     ├── 05_packet_analysis
-    │   ├── analyse_packet.py
-    │   └── capture_packet.py
+    │   ├── analyse_packet.py
+    │   └── capture_packet.py
     ├── 06_arp_rarp_simulation
-    │   └── arp_rarp.py
+    │   └── arp_rarp.py
     ├── 07_congestion_control_sim
+    │   ├── stop_and_wait_client.py
+    │   └── stop_and_wait_server.py
     ├── 08_tcp_udp_performance
+    │   ├── tcp_client.py
+    │   ├── tcp_server.py
+    │   ├── udp_client.py
+    │   └── udp_server.py
     ├── 09_routing_algorithms
+    │   ├── dijkstra.py
+    │   └── distance_vector.py
     └── 10_crc_error_correction
+        └── crc_simulation.py
+
+
 ```
 
 ---
