@@ -1,83 +1,146 @@
-To build and install your Docker-based CNL lab environment from scratch, follow these complete steps:
 
-⸻
+# CNL Container
 
-✅ 1. Project Folder Setup
+### A Product of Labtainers
 
-Ensure you have this folder structure:
+## License
+
+This project is licensed under the BSD-3-Clause license.
+
+---
+
+## Project Folder Structure
+
+Ensure your project folder looks like this:
+
 ```
 cnl-container-main/
 ├── Dockerfile
-├── analyse_packet.py
-├── arp_rarp.py
-├── capture_packet.py
-├── chat_client.py
-├── chat_server.py
-├── echo_client.py
-├── echo_server.py
-└── http_client.py
-
+├── LICENSE
+├── README.md
+└── experiments
+    ├── 01_network_tools
+    ├── 02_http_client
+    │   └── http_client.py
+    ├── 03_tcp_apps
+    │   ├── chat_client.py
+    │   ├── chat_server.py
+    │   ├── echo_client.py
+    │   └── echo_server.py
+    ├── 04_dns_simulation
+    ├── 05_packet_analysis
+    │   ├── analyse_packet.py
+    │   └── capture_packet.py
+    ├── 06_arp_rarp_simulation
+    │   └── arp_rarp.py
+    ├── 07_congestion_control_sim
+    ├── 08_tcp_udp_performance
+    ├── 09_routing_algorithms
+    └── 10_crc_error_correction
 ```
 
-⸻
+---
 
-🐳 2. Build the Docker Image
+## How to Set Up and Run the CNL Lab Environment
 
-From inside the cnl-container-main directory:
+### Step 1: Project Folder Setup
+
+Make sure your project folder has the following files and structure:
+
 ```
+cnl-container-main/
+├── Dockerfile
+├── LICENSE
+├── README.md
+└── experiments
+    ├── 01_network_tools
+    ├── 02_http_client
+    │   └── http_client.py
+    ├── 03_tcp_apps
+    │   ├── chat_client.py
+    │   ├── chat_server.py
+    │   ├── echo_client.py
+    │   └── echo_server.py
+    ├── 04_dns_simulation
+    ├── 05_packet_analysis
+    │   ├── analyse_packet.py
+    │   └── capture_packet.py
+    ├── 06_arp_rarp_simulation
+    │   └── arp_rarp.py
+    ├── 07_congestion_control_sim
+    ├── 08_tcp_udp_performance
+    ├── 09_routing_algorithms
+    └── 10_crc_error_correction
+```
+
+---
+
+### Step 2: Build the Docker Image
+
+From inside the `cnl-container-main` directory, run the following command to build the Docker image:
+
+```bash
 docker build -t cnl-container-image .
 ```
 
-```
-docker build -t cnl-container-image .
-docker run -it --name cnl-lab -p 8080:8080 -p 12345:12345 cnl-container-image
+After the build completes, run the container:
 
-```
-
-
-⸻
-
-🚀 3. Run the Container
-
-To run and expose the necessary ports (8080 and 12345):
-```
+```bash
 docker run -it --name cnl-lab -p 8080:8080 -p 12345:12345 cnl-container-image
 ```
-	⚠️ If the container name cnl-lab already exists and you want a new one:
-```
-docker rm cnl-lab      # Remove old one
+
+---
+
+### Step 3: Run the Container
+
+To run the container and expose the necessary ports (8080 and 12345):
+
+```bash
 docker run -it --name cnl-lab -p 8080:8080 -p 12345:12345 cnl-container-image
-
 ```
 
-⸻
+⚠️ If the container with the name `cnl-lab` already exists, you can remove the old one and start fresh:
 
-🔁 4. Access the Same Container in Two Terminals
-
-Terminal 1:
+```bash
+docker rm cnl-lab      # Remove the old container
+docker run -it --name cnl-lab -p 8080:8080 -p 12345:12345 cnl-container-image
 ```
+
+---
+
+### Step 4: Access the Same Container in Two Terminals
+
+#### Terminal 1 (Start the container):
+
+```bash
 docker start -ai cnl-lab
 ```
-Terminal 2:
-```
+
+#### Terminal 2 (Access the container's shell):
+
+```bash
 docker exec -it cnl-lab bash
 ```
 
+---
 
-⸻
+### Step 5: Try a Test Example (Echo Server & Client)
 
-🧪 5. Try a Test Example (Echo Server & Client)
+#### In Terminal 1 (Server):
 
-In Terminal 1 (server):
-```
-python3 echo_server.py
-```
-In Terminal 2 (client):
-```
-python3 echo_client.py
+```bash
+python3 experiments/03_tcp_apps/echo_server.py
 ```
 
+#### In Terminal 2 (Client):
 
-⸻
+```bash
+python3 experiments/03_tcp_apps/echo_client.py
+```
 
-Would you like this bundled as a downloadable README.md file?
+---
+
+This will test a basic echo server-client setup within the Docker container.
+
+---
+
