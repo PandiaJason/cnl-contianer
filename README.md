@@ -8,7 +8,7 @@
                                                  
 # Computer Networks Laboratory with Labtainers
 
-### An Opensourse initiative by Labtainers
+An open-source initiative by Labtainers, where I share academic lab manuals and experiments in a lightweight, isolated, plug-and-run environment. Anyone can set up lab experiments and environments with zero setup hassle—no dependency issues, no OS conflicts.
 
 ## License
 
