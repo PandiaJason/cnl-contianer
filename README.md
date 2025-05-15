@@ -1,14 +1,16 @@
 ```bash
- _          _     _        _                     
-| |    __ _| |__ | |_ __ _(_)_ __   ___ _ __ ___ 
-| |   / _` | '_ \| __/ _` | | '_ \ / _ \ '__/ __|
-| |__| (_| | |_) | || (_| | | | | |  __/ |  \__ \
-|_____\__,_|_.__/ \__\__,_|_|_| |_|\___|_|  |___/
+               _      _        _                     
+  ___ ___   __| | ___| |_ __ _(_)_ __   ___ _ __ ___ 
+ / __/ _ \ / _` |/ _ \ __/ _` | | '_ \ / _ \ '__/ __|
+| (_| (_) | (_| |  __/ || (_| | | | | |  __/ |  \__ \
+ \___\___/ \__,_|\___|\__\__,_|_|_| |_|\___|_|  |___/
+                                                     
+
 ```
                                                  
-# Computer Networks Laboratory with Labtainers
+# Computer Networks Laboratory with Codetainers
 
-An open-source initiative by Labtainers, where I share academic lab manuals and experiments in a lightweight, isolated, plug-and-run environment. Anyone can set up lab experiments and environments with zero setup hassle—no dependency issues, no OS conflicts.
+An open-source initiative by Codetainers, where I share academic lab manuals and experiments in a lightweight, isolated, plug-and-run environment. Anyone can set up lab experiments and environments with zero setup hassle—no dependency issues, no OS conflicts.
 
 ## License
 
